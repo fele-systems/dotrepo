@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH="$PATH:/home/feles/.dotnet/tools"
 
 # Path to your Oh My Zsh installation.
 export ZSH="$ZDOTDIR/ohmyzsh"
@@ -74,11 +75,27 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z nvm)
+plugins=(git z nvm fzf)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+#share history between sessions
+setopt SHARE_HISTORY
+#append entries rather than overrite then
+setopt APPEND_HISTORY
+#set history size
+export HISTSIZE=10000
+#save history after logout
+export SAVEHIST=10000
+#append into history file
+setopt INC_APPEND_HISTORY
+#save only one command if 2 common are same and consistent
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+#add timestamp for each entry
+setopt EXTENDED_HISTORY
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
